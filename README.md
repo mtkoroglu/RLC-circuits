@@ -138,3 +138,35 @@ $$\lim_{t \rightarrow \infty}V_C(t) = V_{cc}$$
 </figure>
 
 <p align="justify">Yukarıda RC devresinin zorlanmış cevabı analizinde yaptığımız gibi yine devreye KVL uygulayalım.</p>
+
+$$Ri(t)-V_C(t) = 0$$
+
+<p align="justify">Devrede artık $i(t)$ ile $i_C(t)$ aynı yönde değil de ters yöndeler. Bnu kullanarak</p>
+
+$$-Ri_C(t)-V_C(t) = 0$$
+
+<p align="justify">yazabiliriz. Kapasitörün matematiksel modelini kullanırsak</p>
+
+$$-RC\frac{dV_C(t)}{dt}-V_C(t) = 0$$
+
+<p align="justify">bulunur. Düzenlersek</p>
+
+$$\frac{dV_C(t)}{dt} = -\frac{1}{RC}V_C(t)$$
+
+<p align="justify">âdi diferansiyel denklemini elde ederiz. Bu ifade zorlanmış cevapta elde ettiğimizden daha kolay. Biraz daha manipüle edersek</p>
+
+$$\frac{dV_C(t)}{V_C(t)} = -\frac{dt}{RC}$$
+
+<p align="justify">bulunur. Her iki tarafın $k=t_0$'dan $k=t$'ye kadar integralini alalım.</p>
+
+$$\int_{k=t_0}^{k=t} \frac{dV_C(k)}{V_C(k)}dk = -\frac{1}{RC}\int_{k=t_0}^{k=t}dk$$
+
+<p align="justify">Düzenleyerek devam edersek</p>
+
+$$ln \Bigg(\frac{V_C(t)}{V_C(t_0)}\Bigg) = -\frac{1}{RC}(t-t_0)$$
+
+<p align="justify">En sonunda $t_0 = 0$ kabul ederek nihai ifadeyi yazacak olursak</p>
+
+$$V_C(t) = V_C(0) e^{\displaystyle-\frac{t}{RC}}$$
+
+<p align="justify">ifadesini elde ederiz.</p>
