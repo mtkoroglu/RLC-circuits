@@ -86,7 +86,7 @@ $$F(s) = \int_{0}^{-\infty}f(t)e^{-st}dt$$
 
 $$L\Bigg[\frac{dV_C(t)}{dt}\Bigg] = -\frac{1}{RC}L\big[V_C(t)\big] + \frac{V_{cc}}{RC}L\big[1\big]$$
 
-<p align="justify">ifadesini elde ederiz. Tabi burada $V_{cc}$ terimini DC voltaj kaynağı varsaydığımızdan zamanla değişmeyen bir sabit kabul ettik. Yoksa voltaj kaynağı zamanla değişen bir sinyal olması durumunda Laplace operatörünün dışına direk çıkamazdı. Devam edecek olursak, Laplace tablosundan faydalanarak dönüşümleri gerçekleştirelim.</p>
+<p align="justify">ifadesini elde ederiz. Tabi burada $V_{cc}$ terimini DC voltaj kaynağı varsaydığımızdan zamanla değişmeyen bir sabit kabul ettik. Yoksa voltaj kaynağı zamanla değişen bir sinyal olması durumunda Laplace operatörünün dışına direk çıkamazdı. Devam edecek olursak, Laplace tablosundan faydalanarak aşağıdaki dönüşümleri gerçekleştirelim.</p>
 
 $$sV_C(s)-V_C(0) = -\frac{1}{RC}V_C(s) + \frac{V_{cc}}{RCs}$$
 
@@ -141,7 +141,7 @@ $$\lim_{t \rightarrow \infty}V_C(t) = V_{cc}$$
 
 $$Ri(t)-V_C(t) = 0$$
 
-<p align="justify">Devrede artık $i(t)$ ile $i_C(t)$ aynı yönde değil de ters yöndeler. Bnu kullanarak</p>
+<p align="justify">Devrede artık $i(t)$ ile $i_C(t)$ aynı yönde değil de ters yöndeler. Bunu kullanarak</p>
 
 $$-Ri_C(t)-V_C(t) = 0$$
 
@@ -153,7 +153,9 @@ $$-RC\frac{dV_C(t)}{dt}-V_C(t) = 0$$
 
 $$\frac{dV_C(t)}{dt} = -\frac{1}{RC}V_C(t)$$
 
-<p align="justify">âdi diferansiyel denklemini elde ederiz. Bu ifade zorlanmış cevapta elde ettiğimizden daha kolay. Biraz daha manipüle edersek</p>
+<p align="justify">âdi diferansiyel denklemini elde ederiz. Bu ifade zorlanmış cevapta elde ettiğimizden daha kolay.
+<h4>Kalkülüs ile Çözüm</h4>
+Biraz daha manipüle edersek</p>
 
 $$\frac{dV_C(t)}{V_C(t)} = -\frac{dt}{RC}$$
 
@@ -170,3 +172,48 @@ $$ln \Bigg(\frac{V_C(t)}{V_C(t_0)}\Bigg) = -\frac{1}{RC}(t-t_0)$$
 $$V_C(t) = V_C(0) e^{\displaystyle-\frac{t}{RC}}$$
 
 <p align="justify">ifadesini elde ederiz.</p>
+
+<h4>Laplace Dönüşümü ile Çözüm</h4>
+<p align="justify">Yukarıda devreye KVL uygulayıp biraz düzenleme yaptıktan sonra aşağıdaki âdi diferansiyel denklemi elde etmiştik.</p>
+
+$$\frac{dV_C(t)}{dt} = -\frac{1}{RC}V_C(t)$$
+
+<p align="justify">Laplace dönüşümünü bu diferansiyel denklemin her iki yanına uygularsak</p>
+
+$$L\Bigg[\frac{dV_C(t)}{dt}\Bigg] = -\frac{1}{RC}L\big[V_C(t)\big]$$
+
+<p align="justify">ifadesini elde ederiz. Devam edecek olursak, Laplace tablosundan faydalanarak aşağıdaki dönüşümleri gerçekleştirelim.</p>
+
+$$sV_C(s)-V_C(0) = -\frac{1}{RC}V_C(s)$$
+
+<p align="justify">Düzenleyerek devam edecek olursak</p>
+
+$$\Bigg(s+\frac{1}{RC}\Bigg)V_C(s) = V_C(0)$$
+
+<p align="justify">elde edilir. Daha da düzenlersek</p>
+
+$$V_C(s) =\frac{V_C(0)}{s+\frac{1}{RC}}$$
+
+<p align="justify">elde edilir. Burada ters Laplace dönüşümü uygularsak, yukarıda Kalkülüs kullanarak integraller aracılığıyla elde edilen çözümün aynısına ulaşmış oluruz.</p>
+
+$$V_C(t) = V_C(0)e^{\displaystyle-\frac{t}{RC}}$$
+
+<hr>
+<h4>Çözümün Yorumlanması ve Grafiği</h4>
+<p align="justify">Aşağıda grafiğini çizdireceğimiz bu fonksiyon hakkında uç değerlere bakarak düşünecek olursak $t = 0$ iken $V_C(0) = V_C(0)$ ve</p>
+
+$$\lim_{t \rightarrow \infty}V_C(t) = 0$$ 
+
+<p align="justify">olduğunu görebiliriz. Zaman sabiti olan $\tau = RC$ arttıkça $V_C(t)$'nin $0$'a ulaşması yavaşlarken, $\tau$ azalırsa $V_C(t)$'nin $0$'a ulaşması hızlanıyor. RC devresinin doğal cevabının $V_C(0) = 5V$ ve değişik $R$ ve $C$ değerlerine göre çizdirilen animasyonunu aşağıda görebilirsiniz.</p>
+
+<figure>
+    <img src="gif/RC-circuit-natural-response.gif" alt="RC devresi doğal cevap animasyonu" width=50% height=auto>
+    <figcaption>RC devresinin doğal cevabı animasyonu</figcaption>
+</figure>
+
+<p align="justify">Yukarıda animasyonu verilen grafiğin sabit hâli aşağıdaki gibidir.</p>
+
+<figure>
+    <img src="figure/RC-devresi-doğal-cevap.png" alt="RC devresi doğal cevap grafiği" width=50% height=auto>
+    <figcaption>RC devresinin doğal cevabı grafiği</figcaption>
+</figure>
