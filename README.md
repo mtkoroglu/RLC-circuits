@@ -198,7 +198,6 @@ $$V_C(s) =\frac{V_C(0)}{s+\frac{1}{RC}}$$
 
 $$V_C(t) = V_C(0)e^{\displaystyle-\frac{t}{RC}}$$
 
-<hr>
 <h4>Çözümün Yorumlanması ve Grafiği</h4>
 <p align="justify">Aşağıda grafiğini çizdireceğimiz bu fonksiyon hakkında uç değerlere bakarak düşünecek olursak $t = 0$ iken $V_C(0) = V_C(0)$ ve</p>
 
@@ -217,3 +216,4 @@ $$\lim_{t \rightarrow \infty}V_C(t) = 0$$
     <img src="figure/RC-devresi-doğal-cevap.png" alt="RC devresi doğal cevap grafiği" width=50% height=auto>
     <figcaption>RC devresinin doğal cevabı grafiği</figcaption>
 </figure>
+<hr>
