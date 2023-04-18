@@ -241,13 +241,13 @@ i_L(t) = i_L(t_0) + \frac{1}{L}\int_{t_0}^tV_L(k)dk
 
 $$-V_{cc} + Ri(t) + V_L(t) = 0$$
 
-<p align="justify">Devrede endüktörün üzerinden geçen akım $i_L(t)$, aynı yönde tanımlandıklarından dolayı devrede dolaşan akım $i(t)$'ye eşit.</p>
+<p align="justify">Devrede dolaşan akım $i(t)$, endüktörün üzerinden geçen akım $i_L(t)$ ile aynı yönde tanımlandıklarından dolayı birbirlerine eşit.</p>
 
-$$i_L(t)=i(t)$$
+$$i(t)=i_L(t)$$
 
 <p align="justify">Bunu kullanarak endüktörün matematiksel modelini KVL ile elde edilen denklemde yerine koyacak olursak</p>
 
-$$-V_{cc} + Ri_L(t) + L\frac{di_L(t)}{dt} = 0$$
+$$-V_{cc} + Ri(t) + L\frac{di(t)}{dt} = 0$$
 
 <p align="justify">birinci dereceden âdi diferansiyel denklemini elde ederiz. Bu denklemi düzenlersek</p>
 
