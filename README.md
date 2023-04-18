@@ -199,11 +199,11 @@ $$V_C(s) =\frac{V_C(0)}{s+\frac{1}{RC}}$$
 $$V_C(t) = V_C(0)e^{\displaystyle-\frac{t}{RC}}$$
 
 <h4>Çözümün Yorumlanması ve Grafiği</h4>
-<p align="justify">Aşağıda grafiğini çizdireceğimiz bu fonksiyon hakkında uç değerlere bakarak düşünecek olursak $t = 0$ iken $V_C(0) = V_C(0)$ ve</p>
+<p align="justify">Aşağıda grafiğini çizdireceğimiz bu fonksiyon hakkında uç değerlere bakarak düşünecek olursak $t = 0$ iken $V_C(0) = V_{cc} = 5V}$ olarak başlamış. Devrede gerilim kaynağının çıkarılması ve <b>SW2</b> anahtarının kapanması ile kapasitör üzerinde depolanmış enerji, direnç $R$ üzerinden zaman sabiti $\tau = RC$ ile orantılı olacak biçimde tükeniyor ve böylece $V_C(t)$ zaman ilerlerken sıfırlanıyor.</p>
 
 $$\lim_{t \rightarrow \infty}V_C(t) = 0$$ 
 
-<p align="justify">olduğunu görebiliriz. Zaman sabiti olan $\tau = RC$ arttıkça $V_C(t)$'nin $0$'a ulaşması yavaşlarken, $\tau$ azalırsa $V_C(t)$'nin $0$'a ulaşması hızlanıyor. RC devresinin doğal cevabının $V_C(0) = 5V$ ve değişik $R$ ve $C$ değerlerine göre çizdirilen animasyonunu aşağıda görebilirsiniz.</p>
+<p align="justify">Zaman sabiti olan $\tau = RC$ arttıkça $V_C(t)$'nin $0$'a ulaşması yavaşlarken, $\tau$ azalırsa $V_C(t)$'nin $0$'a ulaşması hızlanıyor. RC devresinin doğal cevabının $V_C(0) = 5V$ ve değişik $R$ ve $C$ değerlerine göre çizdirilen animasyonunu aşağıda görebilirsiniz.</p>
 
 <figure>
     <img src="gif/RC-circuit-natural-response.gif" alt="RC devresi doğal cevap animasyonu" width=50% height=auto>
@@ -217,3 +217,40 @@ $$\lim_{t \rightarrow \infty}V_C(t) = 0$$
     <figcaption>RC devresinin doğal cevabı grafiği</figcaption>
 </figure>
 <hr>
+
+<h3>Endüktörün Matematiksel Modeli</h3>
+<p align="justify">Endüktörün matematiksel modeli</p>
+
+$$V_L(t) = L\frac{di_L(t)}{dt}$$
+
+<p align="justify">olarak verilmişti. Bu birinci dereceden âdi diferansiyel denklemin her iki tarafının $k=t_0$ anından $k=t$ anına kadar integralini alırsak aşağıdaki çözümü elde ederiz.</p>
+
+```math
+i_L(t) = i_L(t_0) + \frac{1}{L}\int_{t_0}^tV_L(k)dk
+```
+<hr>
+<h3>RL Devresinin Zorlanmış Cevabı</h3>
+<p align="justify">Aşağıdaki şekilde gördüğümüz güç kaynağı, rezistör ve endüktörden oluşan RL devresinin zorlanmış cevabını analiz edelim. Burada güç kaynağını bağlayıp devre elemanları üzerinde gerilim-akım oluşturduğumuzdan dolayı devreyi "zorlamış" olduk.</p>
+
+<figure>
+<img src="figure/RL-devresi-basamak-cevabı.jpg" alt="RL devresi (zorlanmış cevap)" width=50% height=auto>
+<figcaption>RL devresi (zorlanmış cevap)</figcaption>
+</figure>
+
+<p align="justify">Yukarıdaki devrede ok yönünde dolaşıp Kirchoff'un Gerilimler Yasasını (İng. Kirchoff's Voltage Law - KVL) uygularsak aşağıdaki eşitliği elde ederiz.</p>
+
+$$-V_{cc} + Ri(t) + V_L(t) = 0$$
+
+<p align="justify">Devrede endüktörün üzerinden geçen akım $i_L(t)$, aynı yönde tanımlandıklarından dolayı devrede dolaşan akım $i(t)$'ye eşit.</p>
+
+$$i_L(t)=i(t)$$
+
+<p align="justify">Bunu kullanarak endüktörün matematiksel modelini KVL ile elde edilen denklemde yerine koyacak olursak</p>
+
+$$-V_{cc} + Ri_L(t) + L\frac{di_L(t)}{dt} = 0$$
+
+<p align="justify">birinci dereceden âdi diferansiyel denklemini elde ederiz. Bu denklemi düzenlersek</p>
+
+$$\frac{di(t)}{dt} = -\frac{R}{L}i(t) + \frac{V_{cc}}{L}$$
+
+<p align="justify">hâline gelir.
