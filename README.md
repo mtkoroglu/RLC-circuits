@@ -163,15 +163,29 @@ $$\frac{dV_C(t)}{V_C(t)} = -\frac{dt}{RC}$$
 
 $$\int_{k=t_0}^{k=t} \frac{dV_C(k)}{V_C(k)}dk = -\frac{1}{RC}\int_{k=t_0}^{k=t}dk$$
 
-<p align="justify">Düzenleyerek devam edersek</p>
+<p align="justify">Dikkat edilirse soldaki ifade doğal logaritma ile alakalı bir integral. İntegralleri alarak ilerleyecek olursak</p>
 
-$$ln \Bigg(\frac{V_C(t)}{V_C(t_0)}\Bigg) = -\frac{1}{RC}(t-t_0)$$
+$$\ln\Bigg(\frac{dV_C(k)}{V_C(k)}\Bigg)\Bigg|_{k=t_0}^{k=t} = -\frac{1}{RC}k\Bigg|_{k=t_0}^{k=t}$$
 
-<p align="justify">En sonunda $t_0 = 0$ kabul ederek nihai ifadeyi yazacak olursak</p>
+<p align="justify">ifadesi oluşur. Sınır koşullarını yerine koyalım.</p>
+
+$$\ln\Big(V_C(t)\Big) - \ln\Big(V_C(t_0)\Big) = -\frac{1}{RC}(t-t_0)$$
+
+<p align="justify">Soldaki doğal logaritma içeren ifadelerle yapılan çıkarma işlemi, aşağıdaki hâlini alırken</p>
+
+$$
+\ln \Bigg( \frac{V_C(t)}{V_C(t_0)}\Bigg) = -\frac{1}{RC}(t-t_0)
+$$
+
+<p align="justify">her iki tarafı $e \approx 2.71$'in üssü olarak yazarsak (birşey değişmeyeği gibi sol taraftaki doğal logaritma $\ln$ ifadesinden kurtulmuş olacağız)</p>
+
+$$
+\frac{V_C(t)}{V_C(t_0)} = e^{\textstyle -\frac{1}{RC}(t-t_0)}
+$$
+
+<p align="justify">ifadesinin elde ederiz. Başlangıç zamanı $t_0=0$ kabul edersek, en sonunda aşağıdaki çözümü elde ederiz.</p>
 
 $$V_C(t) = V_C(0) e^{\displaystyle-\frac{t}{RC}}$$
-
-<p align="justify">ifadesini elde ederiz.</p>
 
 <h4>Laplace Dönüşümü ile Çözüm</h4>
 <p align="justify">Yukarıda devreye KVL uygulayıp biraz düzenleme yaptıktan sonra aşağıdaki âdi diferansiyel denklemi elde etmiştik.</p>
@@ -254,3 +268,48 @@ $$-V_{cc} + Ri(t) + L\frac{di(t)}{dt} = 0$$
 $$\frac{di(t)}{dt} = -\frac{R}{L}i(t) + \frac{V_{cc}}{L}$$
 
 <p align="justify">hâline gelir.
+
+<h4>Kalkülüs ile Çözüm</h4>
+<p align="justify">Biraz daha manipüle edersek</p>
+
+$$\frac{di(t)}{i(t)-\displaystyle\frac{V_{cc}}{R}} = -\frac{R}{L}dt$$
+
+<p align="justify">denklemini elde ederiz. Eşitliğin her iki tarafının integralini $k=0$'dan $k=t$ anına kadar alalım.</p>
+
+$$\int_{k=t_0}^{k=t}\frac{di(k)}{i(k)-\displaystyle\frac{V_{cc}}{R}}dk = -\frac{R}{L}\int_{k=t_0}^{k=t}dk$$
+
+<p align="justify">Dikkat edilirse soldaki ifade doğal logaritma ile alakalı bir integral. İntegralleri alarak ilerleyecek olursak</p>
+
+$$\ln\Bigg(i(k)- \frac{V_{cc}}{R}\Bigg)\Bigg|_{k=t_0}^{k=t} = -\frac{R}{L}k\Bigg|_{k=t_0}^{k=t}$$
+
+<p align="justify">ifadesi oluşur. Sınır koşullarını yerine koyalım.</p>
+
+$$\ln\Bigg(i(t)- \frac{V_{cc}}{R}\Bigg) - \ln\Bigg(i(t_0)- \frac{V_{cc}}{R}\Bigg) = -\frac{R}{L}(t-t_0)$$
+
+<p align="justify">Soldaki doğal logaritma içeren ifadelerle yapılan çıkarma işlemi, aşağıdaki hâlini alırken</p>
+
+$$
+\ln \Bigg( \frac{i(t)- \displaystyle \frac{V_{cc}}{R}}{i(t_0)- \displaystyle \frac{V_{cc}}{R}}\Bigg) = -\frac{R}{L}(t-t_0)
+$$
+
+<p align="justify">her iki tarafı $e \approx 2.71$'in üssü olarak yazarsak (birşey değişmeyeği gibi sol taraftaki doğal logaritma $\ln$ ifadesinden kurtulmuş olacağız)</p>
+
+$$
+\frac{i(t)- \displaystyle \frac{V_{cc}}{R}}{i(t_0)- \displaystyle \frac{V_{cc}}{R}} = e^{\textstyle -\frac{R}{L}(t-t_0)}
+$$
+
+<p align="justify">ifadesinin elde ederiz. Başlangıç zamanı $t_0=0$ kabul edersek, en sonunda aşağıdaki çözümü elde ederiz.</p>
+
+$$
+i(t) = \frac{V_{cc}}{R} + i(0)e^{\textstyle-\frac{R}{L}t} - \frac{V_{cc}}{R}e^{\textstyle-\frac{R}{L}t}
+$$
+
+<p align="justify">En başta $i(t) = i_L(t)$ olduğunu belirtmiştik. Dolayısıyla endüktörün üzerinden geçen akımın ifadesi</p>
+
+$$
+i_L(t) = \frac{V_{cc}}{R} + i_L(0)e^{\textstyle-\frac{R}{L}t} - \frac{V_{cc}}{R}e^{\textstyle-\frac{R}{L}t}
+$$
+
+<p align="justify">olmuş olur.</p>
+
+<h4>Laplace Dönüşümü ile Çözüm</h4>
