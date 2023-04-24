@@ -213,7 +213,7 @@ $$V_C(s) =\frac{V_C(0)}{s+\frac{1}{RC}}$$
 $$V_C(t) = V_C(0)e^{\displaystyle-\frac{t}{RC}}$$
 
 <h4>Çözümün Yorumlanması ve Grafiği</h4>
-<p align="justify">Aşağıda grafiğini çizdireceğimiz bu fonksiyon hakkında uç değerlere bakarak düşünecek olursak $t = 0$ iken $V_C(0) = V_{cc} = 5V}$ olarak başlamış. Devrede gerilim kaynağının çıkarılması ve <b>SW2</b> anahtarının kapanması ile kapasitör üzerinde depolanmış enerji, direnç $R$ üzerinden zaman sabiti $\tau = RC$ ile orantılı olacak biçimde tükeniyor ve böylece $V_C(t)$ zaman ilerlerken sıfırlanıyor.</p>
+<p align="justify">Aşağıda grafiğini çizdireceğimiz bu fonksiyon hakkında uç değerlere bakarak düşünecek olursak $t = 0$ iken $V_C(0) = V_{cc} = 5V$ olarak başlamış. Devrede gerilim kaynağının çıkarılması ve <b>SW2</b> anahtarının kapanması ile kapasitör üzerinde depolanmış enerji, direnç $R$ üzerinden zaman sabiti $\tau = RC$ ile orantılı olacak biçimde tükeniyor ve böylece $V_C(t)$ zaman ilerlerken sıfırlanıyor.</p>
 
 $$\lim_{t \rightarrow \infty}V_C(t) = 0$$ 
 
