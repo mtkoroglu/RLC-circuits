@@ -313,3 +313,29 @@ $$
 <p align="justify">olmuş olur.</p>
 
 <h4>Laplace Dönüşümü ile Çözüm</h4>
+
+<p align="justify">Yukarıda devreye KVL uygulayıp biraz düzenleme yaptıktan sonra aşağıdaki âdi diferansiyel denklemi elde etmiştik.</p>
+
+$$\frac{di(t)}{dt} = -\frac{R}{L}i(t) + \frac{V_{cc}}{L}$$
+
+<p align="justify">Laplace dönüşümünü bu diferansiyel denklemin her iki yanına uygularsak</p>
+
+$$L\Bigg[\frac{di(t)}{dt}\Bigg] = -\frac{R}{L}\big[i(t)\big] + \frac{V_{cc}}{L}L\big[1\big]$$
+
+<p align="justify">ifadesini elde ederiz. Tabi burada $V_{cc}$ terimini DC voltaj kaynağı varsaydığımızdan zamanla değişmeyen bir sabit kabul ettik. Yoksa voltaj kaynağı zamanla değişen bir sinyal olması durumunda Laplace operatörünün dışına direk çıkamazdı. Devam edecek olursak, Laplace tablosundan faydalanarak aşağıdaki dönüşümleri gerçekleştirelim.</p>
+
+$$sI(s)-i(0) = -\frac{R}{L}I(s) + \frac{V_{cc}}{Ls}$$
+
+<p align="justify">Düzenleyerek devam edecek olursak</p>
+
+$$\Bigg(s+\frac{R}{L}\Bigg)I(s) = i(0) + \frac{V_{cc}}{Ls}$$
+
+<p align="justify">elde edilir. Daha da düzenlersek</p>
+
+$$I(s) = \frac{i(0)}{\displaystyle s+\frac{R}{L}} + \frac{V_{cc}}{Rs} - V_{cc}\frac{L}{R}s$$
+
+<p align="justify">elde edilir. Burada ters Laplace dönüşümünü $i_L(t) = i(t)$ değişikliğini yaptıktan sonra kullanırsak yukarıda Kalkülüs kullanarak integraller aracılığıyla elde edilen çözümün aynısına ulaşmış oluruz.</p>
+
+$$
+i_L(t) = \frac{V_{cc}}{R} + i_L(0)e^{\textstyle-\frac{R}{L}t} - \frac{V_{cc}}{R}e^{\textstyle-\frac{R}{L}t}
+$$
