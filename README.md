@@ -339,3 +339,17 @@ $$I(s) = \frac{i(0)}{\displaystyle s+\frac{R}{L}} + \frac{V_{cc}}{Rs} - \frac{V_
 $$
 i_L(t) = i_L(0)e^{\textstyle-\frac{R}{L}t} + \frac{V_{cc}}{R} - \frac{V_{cc}}{R}e^{\textstyle-\frac{R}{L}t}
 $$
+
+<h4>Çözümün Yorumlanması ve Grafiği</h4>
+<p align="justify">Aşağıda grafiğini çizdireceğimiz bu fonksiyon hakkında uç değerlere bakarak düşünecek olursak $t = 0$ iken $i_L(0) = i_L(0)$ ve</p>
+
+$$\lim_{t \rightarrow \infty}i_L(t) = \frac{V_{cc}}{R}$$ 
+
+<p align="justify">olduğunu görebiliriz. Güç kaynağının gerilim değeri olan $V_{cc}(t)$'nin sabit bir değer olması (yani DC olması) durumunda bu devredeki endüktör akımının grafiğine "RL devresinin basamak cevabı" denir. Ayrıca zaman sabitimiz olan $\tau = \frac{L}{R}$ arttıkça $i_L(t)$'nin $\frac{V_{cc}}{R}$'ye ulaşması yavaşlarken, $\tau$ azalırsa $i_L(t)$'nin $\frac{V_{cc}}{R}$'ye ulaşması hızlanıyor. RL devresinin basamak cevabının $V_{cc} = 5V$, $i_L(0) = 0V$ ve değişik $R$ ve $L$ değerlerine göre çizdirilen grafiğini aşağıda görebilirsiniz.</p>
+
+<figure>
+    <img src="figure/RL-devresi-basamak-cevabı.png" alt="RL devresi basamak cevabı grafiği" width=60% height=auto>
+    <figcaption>RL devresinin zorlanmış (basamak) cevabı grafiği</figcaption>
+</figure>
+
+<hr>
