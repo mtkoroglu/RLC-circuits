@@ -353,3 +353,68 @@ $$\lim_{t \rightarrow \infty}i_L(t) = \frac{V_{cc}}{R}$$
 </figure>
 
 <hr>
+<h3>RL Devresinin Doğal Cevabı</h3>
+<p align="justify">Aşağıda verilen devrenin $t=0$'dan $t=2$'ye kadar olan hâlinin (yani ilk 2 saniyesinin) analizini yukarıda gerçekleştirdik.</p>
+
+<figure>
+    <img = src="figure/RL-devresi-anahtarlama.jpg" alt="RL devresi anahtarlama" width=50% height=auto>
+    <figcaption>RL devresinde anahtarlama ile zorlanmış cevaptan doğal cevaba geçiş</figcaption>
+</figure>
+
+<p align="justify">Yukarıda zorlanmış cevabı oluşturan devre elemanı güç kaynağıydı. Anahtarlama sayesinde $t=2$'den itibaren güç kaynağını devre dışı bırakırsak, yapacağımız analize <b>RL devresinin doğal cevabı</b> denir.</p>
+
+<figure>
+    <img src="figure/RL-devresi-doğal-cevap.jpg" alt="RL devresi (doğal cevap)" width=50% height=auto>
+    <figcaption>RL devresi (doğal cevap)</figcaption>
+</figure>
+
+<p align="justify">Yukarıda RL devresinin zorlanmış cevabı analizinde yaptığımız gibi yine devreye KVL uygulayalım.</p>
+
+$$Ri(t)-V_L(t) = 0$$
+
+<p align="justify">Devrede artık $i(t)$ ile $i_L(t)$ aynı yönde değil de ters yöndeler. Bunu kullanarak</p>
+
+$$-Ri_L(t)-V_L(t) = 0$$
+
+<p align="justify">yazabiliriz. Endüktörün matematiksel modelini kullanırsak</p>
+
+$$-Ri_L(t)-L\frac{di_L(t)}{dt} = 0$$
+
+<p align="justify">bulunur. Düzenlersek</p>
+
+$$\frac{di_L(t)}{dt} = -\frac{R}{L}i_L(t)$$
+
+<p align="justify">âdi diferansiyel denklemini elde ederiz. Bu ifade zorlanmış cevapta elde ettiğimizden daha kolay.
+
+<h4>Kalkülüs ile Çözüm</h4>
+Biraz daha manipüle edersek</p>
+
+$$\frac{di_L(t)}{i_L(t)} = -\frac{R}{L}dt$$
+
+<p align="justify">bulunur. Her iki tarafın $k=t_0$'dan $k=t$'ye kadar integralini alalım.</p>
+
+$$\int_{k=t_0}^{k=t} \frac{di_L(k)}{i_L(k)}dk = -\frac{R}{L}\int_{k=t_0}^{k=t}dk$$
+
+<p align="justify">Dikkat edilirse soldaki ifade doğal logaritma ile alakalı bir integral. İntegralleri alarak ilerleyecek olursak</p>
+
+$$\ln\Bigg(\frac{di_L(k)}{i_L(k)}\Bigg)\Bigg|_{k=t_0}^{k=t} = -\frac{R}{L}k\Bigg|_{k=t_0}^{k=t}$$
+
+<p align="justify">ifadesi oluşur. Sınır koşullarını yerine koyalım.</p>
+
+$$\ln\Big(i_L(t)\Big) - \ln\Big(i_L(t_0)\Big) = -\frac{R}{L}(t-t_0)$$
+
+<p align="justify">Soldaki doğal logaritma içeren ifadelerle yapılan çıkarma işlemi, aşağıdaki hâlini alırken</p>
+
+$$
+\ln \Bigg( \frac{i_L(t)}{i_L(t_0)}\Bigg) = -\frac{R}{L}(t-t_0)
+$$
+
+<p align="justify">her iki tarafı $e \approx 2.71$'in üssü olarak yazarsak (birşey değişmeyeği gibi sol taraftaki doğal logaritma $\ln$ ifadesinden kurtulmuş olacağız)</p>
+
+$$
+\frac{i_L(t)}{i_L(t_0)} = e^{\textstyle -\frac{R}{L}(t-t_0)}
+$$
+
+<p align="justify">ifadesinin elde ederiz. Başlangıç zamanı $t_0=0$ kabul edersek, en sonunda aşağıdaki çözümü elde ederiz.</p>
+
+$$i_L(t) = i_L(0) e^{\displaystyle-\frac{R}{L}t}$$
