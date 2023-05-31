@@ -348,7 +348,7 @@ $$\lim_{t \rightarrow \infty}i_L(t) = \frac{V_{cc}}{R}$$
 <p align="justify">olduğunu görebiliriz. Güç kaynağının gerilim değeri olan $V_{cc}(t)$'nin sabit bir değer olması (yani DC olması) durumunda bu devredeki endüktör akımının grafiğine "RL devresinin basamak cevabı" denir. Ayrıca zaman sabitimiz olan $\tau = \frac{L}{R}$ arttıkça $i_L(t)$'nin $\frac{V_{cc}}{R}$'ye ulaşması yavaşlarken, $\tau$ azalırsa $i_L(t)$'nin $\frac{V_{cc}}{R}$'ye ulaşması hızlanıyor. RL devresinin basamak cevabının $V_{cc} = 5V$, $i_L(0) = 0V$ ve değişik $R$ ve $L$ değerlerine göre çizdirilen grafiğini aşağıda görebilirsiniz.</p>
 
 <figure>
-    <img src="figure/RL-devresi-basamak-cevabı.png" alt="RL devresi basamak cevabı grafiği" width=60% height=auto>
+    <img src="figure/RL-devresi-basamak-cevabı.png" alt="RL devresi basamak cevabı grafiği" width=100% height=auto>
     <figcaption>RL devresinin zorlanmış (basamak) cevabı grafiği</figcaption>
 </figure>
 
@@ -418,3 +418,41 @@ $$
 <p align="justify">ifadesinin elde ederiz. Başlangıç zamanı $t_0=0$ kabul edersek, en sonunda aşağıdaki çözümü elde ederiz.</p>
 
 $$i_L(t) = i_L(0) e^{\displaystyle-\frac{R}{L}t}$$
+
+<h4>Laplace Dönüşümü ile Çözüm</h4>
+<p align="justify">Yukarıda devreye KVL uygulayıp biraz düzenleme yaptıktan sonra aşağıdaki âdi diferansiyel denklemi elde etmiştik.</p>
+
+$$\frac{di_L(t)}{dt} = -\frac{R}{L}i_L(t)$$
+
+<p align="justify">Laplace dönüşümünü bu diferansiyel denklemin her iki yanına uygularsak</p>
+
+$$L\Bigg[\frac{di_L(t)}{dt}\Bigg] = -\frac{R}{L}\big[i_L(t)\big]$$
+
+<p align="justify">ifadesini elde ederiz. Devam edecek olursak, Laplace tablosundan faydalanarak aşağıdaki dönüşümleri gerçekleştirelim.</p>
+
+$$sI_L(s)-i_L(0) = -\frac{R}{L}I_L(s)$$
+
+<p align="justify">Düzenleyerek devam edecek olursak</p>
+
+$$\Bigg(s+\frac{R}{L}\Bigg)I_L(s) = I_L(0)$$
+
+<p align="justify">elde edilir. Daha da düzenlersek</p>
+
+$$I_L(s) =\frac{I_L(0)}{s+\frac{R}{L}}$$
+
+<p align="justify">elde edilir. Burada ters Laplace dönüşümü uygularsak, yukarıda Kalkülüs kullanarak integraller aracılığıyla elde edilen çözümün aynısına ulaşmış oluruz.</p>
+
+$$i_L(t) = i_L(0)e^{\displaystyle-\frac{R}{L}t}$$
+
+<h4>Çözümün Yorumlanması ve Grafiği</h4>
+<p align="justify">Aşağıda grafiğini çizdireceğimiz bu fonksiyon hakkında uç değerlere bakarak düşünecek olursak $t = 0$ iken $i_L(0) = \frac{V_{cc}}{R}$ olarak başlamış. Devrede gerilim kaynağının çıkarılması ve <b>SW2</b> anahtarının kapanması ile endüktör üzerinde depolanmış enerji, direnç $R$ üzerinden zaman sabiti $\tau = \frac{L}{R}$ ile orantılı olacak biçimde tükeniyor ve böylece $i_L(t)$ zaman ilerlerken sıfırlanıyor.</p>
+
+$$\lim_{t \rightarrow \infty}i_L(t) = 0$$ 
+
+<p align="justify">Zaman sabiti olan $\tau = \frac{L}{R}$ arttıkça $i_L(t)$'nin $0$'a ulaşması yavaşlarken, $\tau$ azalırsa $i_L(t)$'nin $0$'a ulaşması hızlanıyor. RL devresinin doğal cevabının $i_L(0) = \frac{V_{cc}}{R} = \frac{5}{R}$ ve değişik $R$ ve $L$ değerlerine göre grafiğini aşağıda görebilirsiniz.</p>
+
+<figure>
+    <img src="figure/RL-devresi-doğal-cevap.png" alt="RL devresi doğal cevap grafiği" width=100% height=auto>
+    <figcaption>RL devresinin doğal cevabı grafiği</figcaption>
+</figure>
+<hr>
