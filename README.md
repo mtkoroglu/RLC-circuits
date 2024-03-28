@@ -49,7 +49,7 @@ $$\int_{k=t_0}^{k=t}\frac{dV_C(k)}{V_C(k)-V_{cc}}dk = -\frac{1}{RC}\int_{k=t_0}^
 
 <p align="justify">Dikkat edilirse soldaki ifade doğal logaritma ile alakalı bir integral. İntegralleri alarak ilerleyecek olursak</p>
 
-$$\ln(V_C(k)- V_{cc})\Big|_{k=t_0}^{k=t} = -\frac{1}{RC}k\Bigg|_{k=t_0}^{k=t}$$
+$$\ln(V_C(k)- V_{cc}) \Big|_{k=t_0}^{k=t} = -\frac{1}{RC}k \Bigg|_{k=t_0}^{k=t}$$
 
 $$\ln(V_C(t)- V_{cc}) - \ln(V_C(t_0)- V_{cc}) = -\frac{1}{RC}(t-t_0)$$
 
